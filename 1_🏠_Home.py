@@ -8,6 +8,7 @@ from constant import *
 from PIL import Image
 import openai
 from langchain.chat_models import ChatOpenAI
+import os
 
 st.set_page_config(page_title='Template' ,layout="wide",page_icon='👧🏻')
 
@@ -62,7 +63,7 @@ if user_input:
 
 # -----------------  loading assets  ----------------- #
 st.sidebar.markdown(info['Photo'],unsafe_allow_html=True)
-    
+print("Current working directory is ... " , os.getcwd())
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
