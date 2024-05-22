@@ -15,6 +15,8 @@ st.set_page_config(page_title='Template' ,layout="wide",page_icon='👧🏻')
 # -----------------  chatbot  ----------------- #
 # Set up the OpenAI key
 openai_api_key = st.sidebar.text_input('Enter your OpenAI API Key and hit Enter', type="password")
+print("Current working directory is ... " , os.getcwd())
+
 openai.api_key = (openai_api_key)
 
 # load the file
@@ -63,7 +65,6 @@ if user_input:
 
 # -----------------  loading assets  ----------------- #
 st.sidebar.markdown(info['Photo'],unsafe_allow_html=True)
-print("Current working directory is ... " , os.getcwd())
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
